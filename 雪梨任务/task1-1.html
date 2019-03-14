@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单</title>
+    <style>
+        .sme{
+			  width:500px;
+			  height:120px;
+		}
+        .smd{
+            width:500px;
+            height:100px;
+        }
+		.sma{
+			color:red;
+		}
+    </style>
+</head>
+<body>
+    <h1>毕业生信息</h1>
+    <form id="testform" method="get" action="">
+            <fieldset class="sme">
+                <legend class="sma">
+                    学生信息
+                </legend>
+                姓&nbsp;&nbsp;名：<input type="text" name="name1" autofocus="autofocus" required="required" placeholder="请输入姓名" autofocus="autofocus" />
+			    <span style="color:red;">*</span>
+			    <br/>
+                学&nbsp;&nbsp;号：<input type="number" name="sno" min="1" step="1" required placeholder="请输入学号" />
+                <span style="color:red;">*</span>
+                </br>
+                手&nbsp;&nbsp;机：<input type="tel" name="p" required  placeholder="请输入手机号"  />
+			    <span style="color:red;">*</span>
+			    <br/>
+                邮&nbsp;&nbsp;箱：<input type="text" name="email" required placeholder="请输入邮箱地址" />
+                <span style="color:red;">*</span>
+			    </br>
+            </fieldset>
+
+            <br/>
+            <fieldset class="smd">
+                    <legend class="sma">
+                        录取情况
+                    </legend>
+                    录取学校 <input type="search" name="school"  autocomplete="on" list="school" />
+		            <datalist id="school">
+                        <option>  </option>
+			            <option>河北师范大学</option>
+			            <option>河北大学</option>
+			            <option>香港中文大学</option>
+			            <option>南京大学</option>
+                    </datalist>
+                    <br/>
+                    入学成绩 <input type="number" name="demoNum" min="0" max="100" step="1" style="width:158px"/>
+                    <br/>
+                    入学时间 <input type="date" name="datedemo" />
+            </fieldset>
+            <br/>
+            <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>
