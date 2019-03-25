@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .a{
+            width: 400px;
+            height: 45px;
+        }
+        .a1{
+            width: 200px;
+            height: 42px;
+            border: 2px #e1af66 solid;
+            
+        }
+        .a2{
+            width: 140px;
+            height: 38px;
+            font-style: #949494;
+        }
+        .b{
+            width: 350px;
+            height: 40px;
+        }
+        .b1{
+            width: 300px;
+            background: #e0e0e0;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+        .b2{
+            color: white;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+            margin-right: 20px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <input type="search" id="sec" class="a1" list="historysearch" placeholder="请输入想查找的商品">
+        <datalist id="historysearch"></datalist>
+        <input type="button" value="搜索" class="a2" onclick="search('msg')">
+        
+    </div>
+    <a>最近搜索</a>
+    <div class="b">
+        <div id="history"></div>
+        <input type="button" class="b2" value="X" onclick="clean()">
+    </div>
+</body>
+
+<script>
+
+    window.onload=searchH();
+
+    function search(){
+        var value = document.getElementById("sec").value;
+        var time = new Date().getTime();
+        localStorage.setItem(time,value);
+        //查重
+        for(var i=0;i<localStorage.length-1;i++){
+            var j = localStorage.length-1;
+            var key1 = localStorage.key(j);
+            var key2 = localStorage.key(i);
+            var value1 = localStorage.getItem(key1);
+            var value2 = localStorage.getItem(key2);
+            if(value1==value2){
+                localStorage.removeItem(key2);
+            }
+        }
+
+        searchH('msg');
+
+        value = " ";//让搜索恢复
+
+    }
+
+    //显示
+    function searchH(){
+        deleteb();
+        var historysearch = document.getElementById("historysearch");
+        var history = document.getElementById("history");
+        for(var i=localStorage.length-1;i>=0;i--){
+            var key = localStorage.key(i);
+
+            /*var text = document.createElement("option");
+            text.id = localStorage.getItem(key);
+            text.innerHTML = localStorage.getItem(key);
+            historysearch.appendChild(text);*/
+
+            var text = document.createElement("a");
+            text.className = "b1";
+            //text.id = "b1" + localStorage.getItem(key);
+            text.innerHTML = localStorage.getItem(key);
+            history.appendChild(text);
+   
+        }
+
+    }
+
+    //处理重复
+    function deleteb(){
+        var before = document.getElementById("history");
+        var childs = before.childNodes;
+        for(var i = childs.length-1;i>=0;i--){
+            before.removeChild(childs[i]);
+        }
+    }
+
+    function clean(){
+        localStorage.clear();
+        var history = document.getElementById("history");
+        history.innerHTML = "";
+    }
+</script>
+</html>
