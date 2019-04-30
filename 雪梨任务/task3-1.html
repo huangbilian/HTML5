@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+        canvas {
+            border: 1px solid blue;
+            position: absolute;
+        }
+        #b{
+            width: 350px;
+            height: 200px;
+            position: absolute;
+            background: url(nike.jpeg) no-repeat;
+            background-size: 350px 200px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="b">
+        </div>
+        <canvas id="canvas" width="350" height="200">
+        </canvas>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    context.fillStyle="#D1D1D1";
+    context.fillRect(0,0,350,200)
+
+    canvas.onclick= draw;
+    function draw(){
+
+        var x = event.clientX;
+        var y = event.clientY;
+
+        context.globalCompositeOperation = "destination-out";
+        context.beginPath();
+        context.arc(x, y, 20, 0, Math.PI*2);
+        context.fill();
+        clear();
+
+    }
+
+    canvas.onmousedown = function(){
+        canvas.onmousemove = draw;
+    }
+
+
+    canvas.onmouseup = function(){
+        canvas.onmousemove = function(){
+            
+        }
+    } 
+
+
+
+    function clear(){
+	    
+	    var imgData = context.getImageData(0, 0, 350, 200); //获取画布中的所有像素
+	   
+	    var s = 0;//设置一个变量来记录已经变为透明的像素点的数量
+	    for (var i = 0; i < imgData.data.length; i += 4) { 
+		    var alpha = imgData.data[i + 3]; 
+		    if (alpha < 10) 
+			s++;
+	    }
+	    var percentage = s / (imgData.data.length / 4);
+	    if (percentage > 0.85){
+            context.clearRect(0,0,350,200);
+        }
+		    
+
+    }
+
+
+    //随机图片
+    /*var imgArr = [nike.jpeg,judi.jpg];
+    var index = Math.floor((Math.randow()*imgArr.length));
+    var b = document.getElementById('b');
+    b.style.background = background[index] +"no-repeat";
+    b.style.backgroundSize = "350px 200px";*/
+    
+
+
+
+</script>
+</html>
