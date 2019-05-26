@@ -8,7 +8,7 @@
     <style>
         #div1{
             width: 400px;
-            height: 400px;
+            height: 420px;
             background: white;
             box-shadow: 0 0 10px rgb(180, 177, 177) ;
             position: relative;
@@ -29,7 +29,9 @@
             position: absolute;
             top: 0;
             left: 0;
+            background: #000;
             opacity: 0;
+            z-index: 2;
             
         }
         #photo{
@@ -59,12 +61,13 @@
         }
         #div2{
             width: 400px;
-            height: 170px;
+            height: 190px;
             background: white;
             /*overflow: hidden; */
             position: relative;
             transform:translateY(0);
             transition: transform 0.5s ease-in-out;
+            z-index: 3;
             
         }
         
@@ -85,7 +88,7 @@
         }
         #wen3{
             font-size: 16px;
-            line-height: 30px;
+            line-height:30px;
             margin-left: 20px;
             background: white;
             color: rgb(202, 198, 198);
@@ -117,8 +120,8 @@
             transition: transform 0.5s ease-in-out;
         }
         #div1:hover #zhezhao{
-            background-color: rgb(0, 0, 0,0.4);
-            opacity: 1;
+            
+            opacity: 0.4;
         }
         #div1:hover #div2{
             transform:translateY(-70px);
