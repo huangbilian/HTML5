@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>英华逸游</title>
+    <script src="js/jquery.js"></script>    
+	<script src="js/bootstrap.min.js"></script>  
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration-style: none;
+        }
+        #all{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #dddddd;
+        }
+        .top{
+            width:100%;
+            height: 30px;
+            background-color: #282828;
+            color: white;
+            position: fixed;
+            z-index:15;
+        }
+        
+        .top img{
+            width:31px;
+            line-height:30px;
+            margin-left:62%;
+            position: absolute;
+        }
+        #zi1{
+            width: 100px;
+            margin-left: 66%;
+            font-size: 14px;
+            line-height: 30px;
+            position: absolute;
+            color: white;
+        }
+        #zi2{
+            width: 70px;
+            margin-left: 78%;
+            font-size: 13px;
+            line-height: 30px;
+            position: absolute;
+            color: white;
+        }
+        #zi3{
+            width: 70px;
+            margin-left: 84%;
+            font-size: 13px;
+            line-height: 30px;
+            position: absolute;
+            color: white;
+        }
+        @media screen and (max-width:750px){
+			.top{
+				display: none;
+			}
+
+        }
+
+        
+        
+        
+        nav{
+            height: 80px;
+            margin:0;
+            z-index: 3;
+        }
+        .navbar{
+            border:none;
+        }
+        .navbar-nav{
+            margin:0;
+            background-color: #f8f8f8;
+        }
+        .nav>li>a{
+            color:black;
+            margin-left:30px;
+            font-size: 17px;
+            line-height: 40px;
+            background-color: #f8f8f8;
+        }
+        .navbar-default .navbar-nav>.active>a{
+            color:#cb5405;
+            background-color: #f8f8f8;
+            border-bottom:4px solid #cb5405;
+        }
+        
+        .carousel-control.left img{
+            position:absolute;
+            top:50%;
+            left:10%;
+        }
+        .carousel-control.right img{
+            position:absolute;
+            top:50%;
+            right:10%;
+        }
+        .carousel-caption{
+            text-align: left;
+            position: absolute;
+            top:0;
+            left:10%;
+        }
+        
+        
+        @media screen and (min-width:751px){
+            .container{
+                width:100%;
+                height: 500px;
+            }
+            #p1{
+                display:block;
+            }
+            #p2{
+                display:none;
+            }
+            .carousel-inner>.item>img{
+                width:100%;
+                height:400px;
+            }
+            .carousel-caption h3{
+                font-size: 190%;
+                margin-top: 8%;
+                margin-bottom: 4%;
+            }
+			.carousel-caption p{
+                width:fit-content;
+                font-size:110%;
+                text-align: left;
+            }
+            .carousel-indicators{
+                top:88%;
+            }
+            .top{
+                top:0;
+            }
+            .navbar-fixed-top{
+                top:30px;
+            }
+            .carousel{
+                top:80px;
+            }
+
+        }
+        @media screen and (max-width:750px){
+            .carousel-caption h3{
+                margin-top: 12%;
+                font-size: 190%;
+                margin-bottom: 4%;
+            }
+            #p1{
+                display:none;
+            }
+            #p2{
+                display:block;
+                font-size:120%;
+                margin-top: 5%;
+            }
+            .container{
+                width:100%;
+                height: 300px;
+            }
+            .navbar-fixed-top{
+                top:0;
+            }
+            .carousel{
+                top:50px;
+            }
+            .carousel-inner>.item>img{
+                width:100%;
+                height:300px;
+            }
+            .carousel-caption h3{
+                font-size: 180%;
+                margin-bottom: 3%;
+            }
+			.carousel-caption p{
+                font-size:85%;
+                text-align: left;
+            }
+            .carousel-indicators{
+                top:90%;
+            }
+            
+
+        }
+
+        
+        @media screen and (min-width:751px){
+            
+            .bannerb{
+                width: 60%;
+                height: 15%;
+                top:70%;
+                left:20%;
+                font-size: 125%;
+                position:absolute;
+                border-radius: 10px;
+                border:5px solid #322026;
+                z-index: 2;
+            }
+
+        }
+        @media screen and (max-width:750px){
+            .bannerb{
+                width: 60%;
+                height: 15%;
+                top:70%;
+                left:20%;
+                font-size: 80%;
+                position:absolute;
+                border-radius: 10px;
+                border:5px solid #322026;
+                z-index: 2;
+            }
+        }
+        .banb{
+            width:25%;
+            height:100%;
+            float:left;
+            margin:0 auto;
+            background-color: #d3d3d8;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            position: relative;
+        }
+        .banb1{
+            width:100%;
+            height:100%;
+            margin: 0 auto;
+            position: absolute;
+            top:25%;
+            left:6%;
+        }
+        .banb1 img{
+            height:70%;
+            margin-left: 6%;
+            vertical-align: middle;
+        }
+        .banb1 a{
+            margin-left: 6%;
+            color: #535353;
+            text-decoration: none;
+        }
+        .banb2{
+            width:5%;
+            height:100%;
+            background-color: #fff;
+            float:left;
+            position: relative;
+        }
+        .banb2 p{
+            right:30%;
+            position: absolute;
+            top:30%;
+            line-height: 100%;
+            color:#808080;
+        }
+        
+        .banb3{
+           width:45%;
+           height:100%;
+           background-color: #fff;
+           float:left;
+           outline:none;
+           border:none;
+           
+        }
+        .banb4{
+            width:25%;
+            height:100%;
+            background-color: #cb5405;
+            border:none;
+            outline:none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .banb4 img{
+            height:70%;
+            vertical-align: middle;
+        }
+
+        @media screen and (min-width:751px){
+            .cen{
+                width:100%;
+                height:4880px;
+                background-color: #dddddd;
+            }
+            .cen1{
+                width:85%;
+                height:4880px;
+                background-color: #dddddd;
+                margin: 0 auto;
+            }
+            .c1{
+                width:100%;
+                height:364px;
+                float:left;
+                margin-top: 30px;
+                background-color: #14316d;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            .c11{
+                width:75%;
+                height:100%;
+                float:left;
+                position: relative;
+                overflow: hidden;
+            }
+            .c11 img{
+                width:100%;
+                height:100%;
+            }
+            .c11 h3{
+                position:absolute;
+                top:5%;
+                left:55%;
+                font-size: 180%;
+                color:#fff;
+                text-align: left;
+            }
+            .c11 p{
+                position:absolute;
+                top:25%;
+                left:55%;
+                font-size: 100%;
+                color:#fff;
+                text-align: left;
+            }
+            .c12{
+                width:25%;
+                height:280px;
+                margin-top: 80px;
+                text-align: center;
+                color:#fff;
+                font-size: 120%;
+                position: relative;
+                float:left;
+            }
+            .c121{
+                margin-top: 15px;
+            }
+            .c12 button{
+                border:1px solid #fff;
+                border-radius: 10px;
+                outline: none;
+                width:60%;
+                height:50px;
+                left:18%;
+                bottom:20%;
+                text-align: center;
+                line-height: 50px;
+                background-color: #14316d;
+            } 
+            .c2{
+                display: none;
+            }
+
+            .c3{
+                width:100%;
+                height:1100px;
+                margin-top: 10px;
+                float:left;
+            }
+            .c31{
+                width:100%;
+                height:60px;
+                color:#000;
+            }
+            .c31 h3{
+                font-style: inherit;
+                font-size: 150%;
+                text-align: center;
+            }
+            .c31 p{
+                font-size: 90%;
+                text-align: center;
+            }
+            .c32{
+                width:1200px;
+                margin:0 auto;
+            }
+            .c33{
+                margin-left:10px;
+                margin-right:10px;
+            }
+            .col-md-6{
+                width:50%;
+            }
+            
+            .black{
+                width:588px;
+                height:100px;
+                background-color: #000;
+                font-size:90%;
+            }
+            .black p{
+                color:#fff;
+                padding-left: 20px;
+            }
+            .con1-tu3{
+                position: relative;
+            }
+            .con1-tu4{
+                position: relative;
+            }
+            .con1-tu5{
+                position: relative;
+            }
+            .zhezhao{
+                width:608px;
+                height:30%;
+                bottom:0;
+                background-color: rgb(0,0,0,0.5);
+                position: absolute;
+            }
+            .zhezhao p{
+                color:#fff;
+                padding-left: 20px;
+            }
+            .c34{
+                display: none;
+            }
+            .c35{
+                display: none;
+            }
+            .c4{
+                width:100%;
+                height: 950px;
+                float: left;
+                margin-top: 10px;
+            }
+            .c41{
+                width:100%;
+                height:90px;
+                color:#000;
+                margin: 0 auto;
+            }
+            .c41 h3{
+                font-style: inherit;
+                font-size: 150%;
+                text-align: center;
+            }
+            .w1{
+                font-size: 90%;
+                text-align: center;
+            }
+            .w2{
+                font-size: 120%;
+                text-align: center;
+            }
+            .c42{
+                display: none;
+            }
+            
+        }
+        @media screen and (max-width:750px){
+            .cen{
+                width:100%;
+                height:3840px;
+                margin-top: 50px;
+                background-color: #dddddd;
+            }
+            .cen1{
+                width:100%;
+                height:3840px;
+                background-color: #dddddd;
+                float:left;
+            }
+            .c11{
+                display: none;
+            }
+            .c12{
+                display: none;
+            }
+            .c1{
+                margin-top:20px;
+                width:100%;
+                height:200px;
+                float: left;
+                background:#ffffff;
+            }
+            .c2{
+                width:90%;
+                height:200px;
+                margin:0 auto;
+                position: relative;
+            }
+            .c21{
+                width:17%;
+                height:80%;
+                top:20%;
+                position:absolute;
+                text-align: center;
+                float: left;
+
+            }
+            .c21 img{
+                width:100%;
+            }
+            .c22{
+                width:55%;
+                height:90%;
+                top:15%;
+                left:25%;
+                position:absolute;
+                text-align: center;
+                float: left;
+                text-align: left;
+            }
+            .c22 h3{
+                color:#1c5080;
+                margin-bottom:5%;
+            }
+            .c22 p{
+                font-size:80%;
+                color:#666666;
+            }
+            .c23{
+                width:25%;
+                height:65%;
+                top:30%;
+                left:75%;
+                position:absolute;
+                text-align: center;
+                float: left;
+            }
+            .c23 button{
+                width:100%;
+                height:50px;
+                outline: none;
+                border:1px solid #b5b5b5;
+                color: #8f8f8f;
+                font-size: 23px;
+                background:#fff;
+                border-radius:10px;
+                line-height:50px;
+            }
+            .c3{
+                width:100%;
+                height:1080px;
+                margin-top: 20px;
+                background-color: #fff;
+                float: left;
+            }
+            .c31{
+                display: none;
+            }
+            .c34{
+                width:100%;
+                height:60px;
+                font-size: 150%;
+                border-bottom-style: solid;
+                border-bottom-color: #f5f5f5;
+                background-color: #fff;
+                margin-top: 30px;
+            }
+            .con1-tu1{
+                padding-bottom: 15px;
+            }
+            .c34 span{
+                color: #e8420a;
+                font-size:26px;
+                font-weight: bolder
+            }
+            .col-xs-12{
+                margin-top: 30px;
+                width:fit-content;
+                margin-left: 5%;
+            }
+            #con2{
+                display: none;
+            }
+            .black{
+                display:none;
+            }
+            .c35{
+                width:100%;
+                height:120px;
+            }
+            .c35 button{
+                width:30%;
+                height:40%;
+                color:#b8b8b8;
+                font-size:120%;
+                margin-top: 5%;
+                margin-left: 35%;
+                border:1px solid #b8b8b8;
+                border-radius: 10px;
+                background-color: #fff;
+                outline: none;
+            }
+            .c4{
+                width:100%;
+                height:1080px;
+                margin-top: 20px;
+                background-color: #fff;
+                float: left;
+            }
+            .c41{
+                display: none;
+            }
+            .c42{
+                width:100%;
+                height:60px;
+                font-size: 150%;
+                border-bottom-style: solid;
+                border-bottom-color: #f5f5f5;
+                background-color: #fff;
+                margin-top: 30px;
+            }
+            .c42 span{
+                color: #e8420a;
+                font-size:26px;
+                font-weight: bolder
+            }
+            .c43{
+                width:1200px;
+                margin:0 auto;
+            }
+        }
+
+        
+        
+
+
+
+
+
+        .bottomd{
+            width:100%;
+            background-color: #000000;
+        }
+        .bottomd1{
+            width:100%;
+            height:400px;
+            color:#fff;
+            margin:0 auto;
+            border-top:1px solid #fff;
+        }
+        .bottomd2{
+            width:1200px;
+            height:400px;
+            padding-top:45px;
+            padding-bottom:45px;
+            margin:0 auto;
+        }
+        .bottomd3{
+            width:1200px;
+            height:70px;
+            margin:0 auto;
+            margin-bottom: 40px;
+        }
+        .bottomd31{
+            width:110px;
+            height:70px;
+            margin-left:40px;
+            margin-right:15px;
+            font-size: 18px;
+            color:#fff;
+            float:left;
+        }
+        .bottomd31 p{
+            text-align: center;
+            margin-top:8px;
+            font-size: 14px;
+        }
+        
+        .bottomd4{
+            width:1200px;
+            height:70px;
+            margin:0 auto;
+            margin-bottom: 10px;
+        }
+        .bottomd4 div{
+            height:65px;
+            margin-right: 25px;
+            color:#fff;
+            font-size: 18px;
+            float:left;
+           
+        }
+        
+        .bottomd4 li{
+            margin-right: 15px;
+            margin-bottom: 15px;
+            color:#fff;
+            font-size: 14px;
+            float:left;
+            
+        }
+        .bottomd5{
+            width:1200px;
+            height:30px;
+            margin-bottom: 15px;
+        }
+        .bottomd5 div{
+            height:30px;
+            margin-right: 25px;
+            color:#fff;
+            font-size: 18px;
+            float:left;
+        }
+        .bottomd5 li{
+            margin-right: 15px;
+            margin-bottom: 15px;
+            color:#fff;
+            font-size: 14px;
+            float:left;
+
+        }
+        .bottomd6{
+            width:1200px;
+            height:65px;
+            margin-bottom: 10px;
+        }
+        .bottomd6 div{
+            height:65px;
+            margin-right: 25px;
+            color:#fff;
+            font-size: 18px;
+            float:left;
+        }
+        .bottomd6 li{
+            margin-right: 15px;
+            margin-bottom: 15px;
+            color:#fff;
+            font-size: 14px;
+            float:left;
+
+        }
+        @media screen and (min-width:751px){
+            .bottomd7{
+                height:150px;  
+            }
+            #d1{
+                float:left;
+            }
+            #d2{
+               
+                display: none;
+            }
+        }
+        @media screen and (max-width:750px){
+            .bottomd1{
+                display: none;
+            }
+            .bottomd7{
+                
+                height:200px;  
+            }
+            .bottomd8{
+                position: relative;
+                margin: 0 auto;
+            }
+            .botttomd9 p{
+                float: none;
+                bottom: 0;
+                position: absolute;
+            }
+            #d1{
+                font-size:90%;
+                float:none;
+                text-align: center;
+            }
+            #d2{
+                margin:30px 10px;
+                font-size:90%;
+                display: block;
+            }
+        }
+
+        .bottomd7{
+            width:100%;
+            border:1px solid #fff;
+            background-color: #000;
+        }
+        .bottomd7 p{
+            text-align: center;
+
+            line-height: 20px;
+            color: #fff;
+        }
+        .bottomd8{
+            padding-top: 40px;
+            margin:0 auto;
+        }
+        .bottomd9{
+            width:600px;
+            margin: 0 auto;
+        }
+        
+        #d1{
+            margin:20px 10px;
+        }
+        #d2{
+            margin:20px 10px;
+            
+        }
+       
+    </style>
+</head>
+<body data-target="#nav1" data-spy="scroll">
+    <div id="all">
+
+        <div class="top">
+            <img src="img/tell.png">
+            <a id="zi1" href="#">400-808-8682</a>
+            <a id="zi2" href="#">请登录 &nbsp;&nbsp;&nbsp;|</a>
+            <a id="zi3" href="#"> &nbsp;注册</a>
+        </div>
+
+
+        <div class="container"> 
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="nav1" >
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#col-1" style=" margin-top: 37px;">
+                            <span class="sr-only">导航开关</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="" class="navbar-brand"><img src="img/logo.png" ></a>
+                    </div>
+                
+            
+                    <div class="collapse navbar-collapse" id="col-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#generic" >首页</a></li>
+                            <li><a href="#n1">热门路线</a></li>
+                            <li><a href="#n2">签证推荐</a></li>
+                            <li><a href="#n3">使命愿景</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>  
+
+            <div id="generic" class="carousel slide" data-ride="carousel">
+                <!-- 轮播（Carousel）指示标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#generic" data-slide-to="1"></li>
+                    
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner" >
+                    <div class="item active">
+                      <img alt="First slide" src="img/banner.jpg" >
+                          <div class="carousel-caption">
+                                <h3>悠游古欧洲   遍览德法瑞意</h3>
+                                
+                                <p id="p1" style="border-top: 1px solid #fff;padding-top: 5px;">巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                                <p id="p1" style="border-bottom: 1px solid #fff;padding-bottom: 5px;">少女峰、大运河游船、金色列车、西庸城堡</p>
+
+                                <p id="p2">全程升级热早+1晚5星酒店</p>
+                            </div>
+                    </div>
+                    <div class="item">
+                        <img alt="Second slide" src="img/banner2.jpg" >
+                        <div class="carousel-caption">
+                            <h3>悠游古欧洲   遍览德法瑞意</h3>
+                            <p id="p1" style="border-top: 1px solid #fff;padding-top: 5px;">巴黎卢浮宫、塞纳河游船、凡尔赛宫</p>
+                            <p id="p1" style="border-bottom: 1px solid #fff;padding-bottom: 5px;">少女峰、大运河游船、金色列车、西庸城堡</p>
+
+                            <p id="p2">全程升级热早+1晚5星酒店</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="bannerb">
+                    <div class="banb">
+                        <div class="banb1">
+                            <img src="img/position.png">
+                            <a>目的地</a>
+                        </div>
+                    </div>
+                    <div class="banb2">
+                        <p>|</p>
+                    </div>
+                    <input type="search" name="search" class="banb3" placeholder="日本 美国 英国 地中海">
+                    <button type="submit" class="banb4">
+                        <img src="img/search.png">
+                    </button>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#generic" data-slide="prev">
+                    <img src="img/left.png" >
+                </a>
+                <a class="right carousel-control" href="#generic" data-slide="next">
+                    <img src="img/right.png" >
+                </a>
+            </div>
+
+        </div>
+
+        <div class="cen">
+            <div class="cen1">
+                <div class="c1">
+                    <div class="c11">
+                        <img src="img/Sbanner2.jpg">
+                        <h3>机场接送  省心省力</h3>
+                        <p>提供上海、苏州、无锡各市 </br>
+                        往返机场、码头接送服务、更有包车服务</p>
+                    </div>
+                    <div class="c12">
+                        <img src="img/car.png">
+                        <p class="c121">车辆接送</p>
+                        <button>查看详情</button>
+                    </div>
+                    <div class="c2">
+                        <div class="c21">
+                            <img src="img/carH.png">
+                        </div>
+                        <div class="c22">
+                            <h3>机场接送  省心省力</h3>
+                            <p>提供上海、苏州、无锡各市 </br>
+                            往返机场、码头接送服务、更有包车服务</p>
+                        </div>
+                        <div class="c23">
+                            <button>查看详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="n1" class="c3">
+                    <div class="c31">
+                        <h3>热 &nbsp 门 &nbsp 线 &nbsp 路</h3>
+                        <p>Popular tourist routes</p>
+                    </div>
+                    <div class="c34">
+                        <p><span >|</span>&nbsp热门线路</p>
+                    </div>
+                    <div class="c32">
+                            <div class="c33">
+                                <div class="col-md-6 col-xs-12" id="con1">
+                                    
+                                    <div class="con1-tu1">
+                                        <img src="img/hot1.jpg"/>
+                                        <div class="black">
+                                            <p style="padding-top: 18px;">海南三亚5天4晚，纯玩、4晚红树林度假王国</p>
+                                            <p>¥<span style="font-size: 28px;">2580</span>/人起</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="con1-tu2">
+                                        <img src="img/hot2.jpg"/>
+                                        <div class="black" style="height: 90px">
+                                            <p style="padding-top: 15px;">德法意瑞欧洲四国，ABCD任意线路由您挑选</p>
+                                            <p>¥<span style="font-size: 28px;">7999</span>/人起</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12" id="con2">
+                                    <div class="con1-tu3">
+                                        <img src="img/hot3.jpg"/>
+                                        <div class="zhezhao">
+                                            <p >曼谷+芭提雅 国际五星，赠送2220大礼包，绝无自费</p>
+                                            <p ><span style="font-size: 30px;">¥2799</span>／人起</p>
+                                        </div>
+                                    </div> 
+                                    <div class="con1-tu4">
+                                        <img src="img/hot4.jpg"/>
+                                        <div class="zhezhao">
+                                            <p >日本本州游 樱花、寿司、温泉、美食</p>
+                                            <p ><span style="font-size: 30px;">¥5399</span>／人起</p>
+                                        </div>
+                                    </div>
+                                    <div class="con1-tu5">
+                                        <img src="img/hot5.jpg"/>
+                                        <div class="zhezhao">
+                                            <p >斯里兰卡7天6晚全景游   保证入住2晚香格里拉</p>
+                                            <p ><span style="font-size: 30px;">¥7999</span>／人起</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c35">
+                            <button>查看更多 ></button>
+                        </div>
+                    </div>
+                    <div id="n2" class="c4">
+                        <div class="c41">
+                            <h3>签 &nbsp 证 &nbsp 推 &nbsp 荐</h3>
+                            <p class="w1">Visa recommendation</p>
+                            <p class="w2">热门： 日本  马来西亚 美国 意大利 加拿大 新加坡</p>
+                        </div>
+                        <div class="c42">
+                            <p><span >|</span>&nbsp签证推荐</p>
+                        </div>
+                        <div class="c43">
+
+                        </div>
+                    </div>
+                    <div id="n3" class=""></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottomd">
+            <div class="bottomd1">
+                <div class="bottomd2">
+                    <div class="bottomd3">
+                        <div class="bottomd31">合作伙伴</div>
+                        <div class="bottomd31">
+                            <img src="img/xiecheng.jpg">
+                            <p>携程</p>
+                        </div>
+                        <div class="bottomd31">
+                            <img src="img/feizhu.jpg">
+                            <p>阿里飞猪</p>
+                        </div>
+                        <div class="bottomd31">
+                            <img src="img/quna.jpg">
+                            <p>去哪儿</p>
+                        </div>
+                        <div class="bottomd31">
+                            <img src="img/suzhou.jpg">
+                            <p style="width:73px;">苏州旅游局</p>
+                        </div>
+                    </div>
+                    <div class="bottomd4">
+                        <ul>
+                            <div>热门位置</div>
+                            <li>韩国</li>
+                            <li>日本</li>
+                            <li>菲律宾</li>
+                            <li>越南</li>
+                            <li>老挝</li>
+                            <li>柬埔寨</li>
+                            <li>泰国</li>
+                            <li>马来西亚</li>
+                            <li>新加坡</li>
+                            <li>印度尼西亚</li>
+                            <li>印度</li>
+                            <li>斯里兰卡</li>
+                            <li>土耳其</li>
+                            <li>阿联酋</li>
+                            <li>西班牙</li>
+                            <li>意大利</li>
+                            <li>希腊</li>
+                            <li>法国</li>
+                            <li>比利时</li>
+                            <li>荷兰</li>
+                            <li>英国</li>
+                            <li>瑞士</li>
+                            <li>奥地利</li>
+                            <li>德国</li>
+                            <li>匈牙利</li>
+                            <li>俄罗斯</li>
+                            <li>捷克</li>
+                            <li>芬兰</li>
+                            <li>葡萄牙</li>
+                            <li>冰岛</li>
+                            <li>美国</li>
+                            <li>加拿大</li>
+                            <li>巴西</li>
+                            <li>阿根廷</li>
+                            <li>澳大利亚</li>
+                            <li>新西兰</li>
+                        </ul>
+                    </div>
+                    <div class="bottomd5">
+                        <ul>
+                            <div>主题服务</div>
+                            <li>海岛假期</li>
+                            <li>历史文化</li>
+                            <li>探索冒险</li>
+                            <li>美食购物</li>
+                            <li>都市生活</li>
+                            <li>海外游学</li>
+                            <li>邮轮度假</li>
+                            <li>蜜月摄影</li>
+                            <li>亲子乐园</li>
+                        </ul>
+                    </div>
+                    <div class="bottomd6">
+                        <ul>
+                            <div>友情链接</div>
+                            <li>马蜂窝</li>
+                            <li>穷游</li>
+                            <li>booking</li>
+                            <li>苏州旅游局</li>
+                            <li>驴友网</li>
+                            <li>吾爱全球签证中</li>
+                            <li>酒店团购</li>
+                            <li>携程旅游攻略</li>
+                            <li>天巡职航在线</li>
+                            <li>满天飞旅游网</li>
+                            <li>中国旅游网</li>
+                            <li>澳乐网</li>
+                            <li>背包免旅游行程</li>
+                            <li>出境旅游</li>
+                            <li>国际酒店</li>
+                            <li>广州旅行社</li>
+                            <li>出境旅游</li>
+                            <li>517旅行</li>
+                            <li>花生游</li>
+                            <li>家园网</li>
+                            <li>海外婚礼</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomd7">
+                <div class="bottomd8">
+                    <div class="bottomd9">
+                        <p id="d1">苏ICP备14019690号 2014-2017</p> 
+                        <p id="d1">@苏州英华国际旅游有限公司 版权所有</p>
+                        <p id="d2">技术支持 杭州联橙科技</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+
+</body>
+
+<script>
+    var li = document.querySelectorAll('.navbar-collapse li');
+    for (var i = 0; i < li.length; i++)
+        li[i].onclick = function () {
+            for (var i = 0; i < li.length; i++)li[i].className = '';
+            this.className='active'
+        }
+    
+</script>
+</html>
